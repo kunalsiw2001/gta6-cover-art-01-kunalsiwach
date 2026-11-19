@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Heist Cover Studio</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover editor">
+    <h1>Sunset Heist Cover Studio</h1>
+    <p class="tagline">Your photo, a bold caption, a poster cover — exported as a PNG to share.</p>
+
+    <fieldset>
+      <legend>1 · Layout</legend>
+      <div class="choices" id="layoutChoices"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2 · Photos</legend>
+      <p class="hint">Pick a panel below, then upload a photo or use a sample. Drag the preview to move a photo; the slider zooms it.</p>
+      <div id="panelList" class="panel-list"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3 · Caption</legend>
+      <label>Title <input id="title" type="text" maxlength="30" value="SUNSET HEIST"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="BOULEVARD QUEEN"></label>
+      <label>Placement
+        <select id="placement">
+          <option value="bottom" selected>Bottom</option>
+          <option value="centre">Centre</option>
+          <option value="top">Top</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4 · Colour grade</legend>
+      <div class="choices" id="gradeChoices"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>5 · Size &amp; export</legend>
+      <label>Post size
+        <select id="sizeSelect">
+          <option value="square" selected>Square · 1080 x 1080</option>
+          <option value="portrait">Portrait · 1080 x 1350</option>
+          <option value="wide">Wide · 1920 x 1080</option>
+        </select>
+      </label>
+      <div class="export-row">
+        <button id="exportSquare" type="button">PNG 1080 x 1080</button>
+        <button id="exportPortrait" type="button">PNG 1080 x 1350</button>
+        <button id="exportWide" type="button">PNG 1920 x 1080</button>
+      </div>
+      <p id="status" role="status"></p>
+    </fieldset>
+  </section>
+
+  <section class="preview" aria-label="Live preview">
+    <canvas id="cover" width="1080" height="1080"></canvas>
+    <p class="preview-hint">Drag a panel in the preview to reposition its photo.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
